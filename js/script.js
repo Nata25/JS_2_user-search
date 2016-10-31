@@ -19,13 +19,9 @@ function insertNames() {
         var name = prompt("Додайте користувача:");
         if (name != null) {
             names.push(name);
-            console.log("Додано користувача " + i + ": " + name);
         }
         // catch input cancel
-        else {
-            cancelInput();
-            return;
-        }
+        else return;
     }
     return names;
 }
@@ -34,31 +30,19 @@ function insertNames() {
 // @param {array} names
 
 function searchUser(names) {
-
     // catch empty string
     do {
         var currentUser = prompt("Введіть ім'я користувача:");
-
         // catch unput cancel
-        if (currentUser == null) {
-            cancelInput();
-            return;
-        }
+        if (currentUser == null) return;
 
-    // } while ( (currentUser.length == 0) || !(/\w/.test(currentUser)) );
     } while (currentUser.length == 0);
 
     for (var j = 0; j < names.length; j++) {
         if (names[j] == currentUser) {
-            alert("Вітаємо, " + currentUser + ", ви успішно зайшли в систему!");
+            alert(currentUser + ", ви успішно зайшли в систему");
             return;
         }
     }
     alert("Ім'я користувача не знайдено.");
-
-    return;
-}
-
-function cancelInput() {
-    console.log("Подальше виконання програми скасовано.");
 }

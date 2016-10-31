@@ -1,3 +1,7 @@
+// -------------------------------------
+// JavaScript. HW 2
+// Insert names into array and seach for a user
+// -------------------------------------
 
 var array = insertNames();
 
@@ -5,6 +9,8 @@ if (array != undefined) {
     searchUser(array);
 }
 
+// Put 5 names into array
+// @return {array} names
 
 function insertNames() {
     var names = new Array();
@@ -15,6 +21,7 @@ function insertNames() {
             names.push(name);
             console.log("Додано користувача " + i + ": " + name);
         }
+        // catch input cancel
         else {
             console.log("Перервано користувачем.");
             return;
@@ -22,6 +29,9 @@ function insertNames() {
     }
     return names;
 }
+
+// Get user name and search through the array
+// @param {array} names
 
 function searchUser(names) {
 
@@ -37,5 +47,6 @@ function searchUser(names) {
         }
     }
     alert("Ім'я користувача не знайдено.");
+
     return;
 }

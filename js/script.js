@@ -44,6 +44,8 @@ function searchUser(names) {
             cancelInput();
             return;
         }
+
+    // } while ( (currentUser.length == 0) || !(/\w/.test(currentUser)) );
     } while (currentUser.length == 0);
 
     for (var j = 0; j < names.length; j++) {

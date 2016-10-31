@@ -23,7 +23,7 @@ function insertNames() {
         }
         // catch input cancel
         else {
-            console.log("Перервано користувачем.");
+            cancelInput();
             return;
         }
     }
@@ -38,6 +38,12 @@ function searchUser(names) {
     // catch empty string
     do {
         var currentUser = prompt("Введіть ім'я користувача:");
+
+        // catch unput cancel
+        if (currentUser == null) {
+            cancelInput();
+            return;
+        }
     } while (currentUser.length == 0);
 
     for (var j = 0; j < names.length; j++) {
@@ -49,4 +55,8 @@ function searchUser(names) {
     alert("Ім'я користувача не знайдено.");
 
     return;
+}
+
+function cancelInput() {
+    console.log("Подальше виконання програми скасовано.");
 }
